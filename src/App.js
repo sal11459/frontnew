@@ -19,6 +19,8 @@ import Navbar from "./components/Navbar";
 
 import { useState } from "react";
 
+import AppB from "./components/lann/Blaa.js";
+
 const App = () => {
   const [allUpdated, setAllUpdated] = useState(false);
   const [token, setToken] = useState("");
@@ -106,6 +108,21 @@ const App = () => {
           }
         />
 
+<Route
+          path="/lf"
+          exact
+          element={
+            <AppB
+              user={user}
+              setUser={setUser}
+              userId={userId}
+              setUserId={setUserId}
+              token = {token}
+              setToken = {setToken}
+            />
+          }
+        />
+
         <Route
           path="/dashboard"
           exact
@@ -141,6 +158,7 @@ const App = () => {
             />
           }
         />
+    
 
         <Route
           path="/quiz"

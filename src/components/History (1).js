@@ -151,10 +151,11 @@ const History = ({ userId, setUserId ,open, token, setToken}) => {
                   }`}
                   onClick={() => handleQuizClick(quiz)}
                 >
-                  <div className="quiz-header">
-                  <span style={{ fontFamily: 'initial', fontSize: '16px', fontWeight: 'bold' }}>{quiz.domain}</span>
-
-                  </div>
+                 <div className={`quiz-header ${quiz.difficulty_level.toLowerCase()}`}>
+  <span style={{ fontFamily: 'initial', fontSize: '16px', fontWeight: 'bold' }}>
+    {quiz.domain}
+  </span>
+</div>
                   <div className="quiz-details"style={{fontFamily:'fantasy'}}>
         
                     <p style={{fontFamily:'serif',fontSize:18}}>Score: {quiz.score}</p>
@@ -172,7 +173,7 @@ const History = ({ userId, setUserId ,open, token, setToken}) => {
                               attempt.is_correct ? " correct" : "wrong"
                             }`}
                           >
-                             <span className="symbol">{attempt.is_correct ? '✔' : '✘'}</span>
+                             {/* <span className="symbol">{attempt.is_correct ? '✔' : '✘'}</span> */}
                              <span className="question-text">{attempt.q_text}</span>
 
                           </div>

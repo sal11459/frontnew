@@ -15,6 +15,7 @@ import axios from "axios";
 import Layout from "./Layout";
 import ip from "../ipaddr.js";
 import Cookie from "js-cookie";
+import MenuAppBar from "./AppBar.js";
 
 
 
@@ -315,6 +316,7 @@ const Home = ({
       /> */}
 
       <Layout>
+      <MenuAppBar/>
         {loading ? (<Loading/>) : (
         <div className="background">
           <div className="container" style={{ overflowX: "hidden" }}>

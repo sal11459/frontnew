@@ -25,11 +25,14 @@ import LeaderboardIcon from "@mui/icons-material/Leaderboard";
 import ip from "../ipaddr.js";
 import Cookies from "js-cookie";
 
+import MenuIcon from "@mui/icons-material/Menu"; // Import the Menu icon
+
+
 const drawerWidth = 240;
 
 const openedMixin = (theme) => ({
   width: drawerWidth,
-  backgroundColor: "#023252", // Specify your desired background color here
+  backgroundColor: "#2e5ac0", // Specify your desired background color here
   transition: theme.transitions.create("width", {
     easing: theme.transitions.easing.sharp,
     duration: theme.transitions.duration.enteringScreen,
@@ -48,7 +51,7 @@ const closedMixin = (theme) => ({
     width: `calc(${theme.spacing(8)} + 1px)`,
   },
   opacity: 1,
-  backgroundColor: "#023252", // Set the background color when the drawer is closed
+  backgroundColor: "#2e5ac0", // Set the background color when the drawer is closed
 });
 
 const DrawerHeader = styled("div")(({ theme }) => ({
@@ -82,7 +85,7 @@ const Drawer = styled(MuiDrawer, {
 
 const Navbar = (props) => {
   const theme = useTheme();
-  const [open, setOpen] = React.useState(false);
+  const [open, setOpen] = React.useState(true);
   const navigate = useNavigate();
 
   const handleLogout = () => {
@@ -126,7 +129,7 @@ const Navbar = (props) => {
                 )}
               </>
             ) : (
-              <ChevronRightIcon />
+              <MenuIcon style={{ color: "#FFFFFF" }} /> 
             )}
           </IconButton>
         </DrawerHeader>
